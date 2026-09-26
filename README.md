@@ -15,7 +15,7 @@ npm install @orvex/orvex-js
 import { createClient } from "@orvex/orvex-js";
 
 const orvex = createClient({
-  org: "sql://<tenant>.<db>.orvex"
+  org: "sql://<tenant>.<db>.orvex",
   authToken: "orvex_sk_....."
 });
 
@@ -105,7 +105,7 @@ import { createOrvexDrizzle } from "@orvex/orvex-js/drizzle";
 import * as schema from "./schema";
 
 const orvex = createClient({
-  org: "sql://<tenant>.<db>.orvex"
+  org: "sql://<tenant>.<db>.orvex",
   authToken: "orvex_sk_....."
 });
 
