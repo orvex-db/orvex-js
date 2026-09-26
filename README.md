@@ -73,11 +73,10 @@ worker.run();
 // ]
 ```
 
-# Dizzle 
-
-## Drizzle ORM Support
+# Drizzle ORM Support
 `@orvex/orvex-js` ships with built-in Drizzle ORM support. 
 Define your schema in TypeScript, get full type safety, and query your Orvex database. With familiar query builder — no codegen, no migrations, no extra setup.
+
 ## setup 
 
 ```ts
