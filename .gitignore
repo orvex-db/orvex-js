@@ -1,0 +1,5 @@
+node_modules
+dist
+.npmignore
+tsup.config.ts
+package-lock.json

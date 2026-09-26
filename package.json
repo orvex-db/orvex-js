@@ -1,0 +1,62 @@
+{
+  "name": "@orvex/orvex-js",
+  "version": "0.1.1",
+  "description": "JavaScript SDK for orvex with ORMs, and batching built in.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types":   "./dist/index.d.ts",
+      "import":  "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./drizzle": {
+      "types":   "./dist/orm/drizzle.d.ts",
+      "import":  "./dist/orm/drizzle.js",
+      "require": "./dist/orm/drizzle.cjs",
+      "default": "./dist/orm/drizzle.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0",
+    "rimraf": "^6.0.0"
+  },
+  "peerDependencies": {
+    "drizzle-orm": "^0.30.0"
+  },
+  "peerDependenciesMeta": {
+    "drizzle-orm": { "optional": true }
+  },
+
+  "keywords": [
+    "javascript",
+    "typescript",
+    "SQLite",
+    "database",
+    "drizzle",
+    "orm",
+    "orvex"
+  ]
+}
