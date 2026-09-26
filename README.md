@@ -8,7 +8,7 @@
 npm install @orvex/orvex-js
 ```
 
-## Setup
+## Configrations
 
 ```ts
 //database.ts
@@ -73,9 +73,9 @@ worker.run();
 // ]
 ```
 
-### Dizzle 
+# Dizzle 
 
-### Drizzle ORM Support
+## Drizzle ORM Support
 `@orvex/orvex-js` ships with built-in Drizzle ORM support. 
 Define your schema in TypeScript, get full type safety, and query your Orvex database. With familiar query builder — no codegen, no migrations, no extra setup.
 ## setup 
@@ -113,10 +113,10 @@ const orvex = createClient({
 export const db = createOrvexDrizzle(orvex, { schema });
 ```
 
-## Query with Full Type Safety
+# Query with Full Type Safety
 Once your schema is defined, every query is fully typed — autocomplete on every column, compile-time errors for typos, and inferred return types.
 
-# Insert
+## Insert
 Use `db.insert()` to add rows. Chain `.values()` to specify the data and `.returning()` to get the inserted row back — including auto-generated fields like id.
 ```ts
 const [alice] = await db
@@ -126,7 +126,7 @@ const [alice] = await db
 // alice: { id: 1, name: "Alice", email: "alice@test.com" }
 ```
 
-# Select sigle data from table
+## Select sigle data from table
 Use `.get()` to fetch exactly one row. It returns the first match, or undefined if nothing is found — no array to unwrap.
 ```ts
 const user = await db
@@ -145,7 +145,7 @@ const allUsers = await db.select().from(users).all();
 // allUsers: { id: number, name: string, email: string }[]
 ```
 
-# Update existing data
+## Update existing data
 Use `.update()` to modify rows. Chain `.set()` with the new values and `.where()` to target specific rows — without `.where()`, every row is updated.
 ```ts
 //update
@@ -156,7 +156,7 @@ await db
   .run();
 ```
 
-# Mixed: Drizzle + Raw SQL
+## Mixed: Drizzle + Raw SQL
 Not everything fits the query builder. Drop down to raw SQL with the `sql` template tag — parameters are safely bound, not string-concatenated.
 ```ts
 import { sql } from "drizzle-orm";
