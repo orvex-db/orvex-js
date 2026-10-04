@@ -9,7 +9,7 @@ interface OrvexClient {
   batch(statements: { sql: string; args: any[] }[]): Promise<{ data: any[] }>;
 }
 
-export function dizzle< TSchema extends Record<string, unknown> = Record<string, never> > (
+export function createDrizzle< TSchema extends Record<string, unknown> = Record<string, never> > (
   client: OrvexClient,
   schema?: TSchema,
 ): SqliteRemoteDatabase<TSchema> {

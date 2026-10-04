@@ -101,15 +101,15 @@ export const posts = sqliteTable("posts", {
 
 ```ts
 //database.ts
-import { createOrvexDrizzle } from "@orvex/orvex-js/drizzle";
+import { createDrizzle } from "@orvex/orvex-js/drizzle";
 import * as schema from "./schema";
 
-const orvex = createClient({
+const client = createClient({
   org: "sql://<tenant>.<db>.orvex",
   authToken: "orvex_sk_....."
 });
 
-export const db = createOrvexDrizzle(orvex, { schema });
+export const db = createDrizzle(client, schema);
 ```
 
 # Query with Full Type Safety
